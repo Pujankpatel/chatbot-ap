@@ -8,6 +8,7 @@ CORS(app)
 OLLAMA_API_URL = "http://localhost:11434/api/generate"
 OLLAMA_MODEL = "gemma3:4b"  # change this to "mistral", "gemma", etc. if needed
 
+
 @app.route('/chat', methods=['POST'])
 def chat():
     try:
@@ -27,6 +28,7 @@ def chat():
 
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
